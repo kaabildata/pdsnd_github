@@ -16,3 +16,6 @@ docs.python.org
 
 ### Requirements
 Python needs to pre-installed to run this script
+
+### Ignored files
+All the files containing bike share data are added to .gitignore file
