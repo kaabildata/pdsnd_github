@@ -1,15 +1,18 @@
 ### Date created
-Include the date you created this project and README file.
+April 3 2020
 
 ### Project Title
-Replace the Project Title
+Exploring the bike share data
 
 ### Description
-Describe what your project is about and what it does
+In this project bike share data for three different cities are provided our main aim to make sense of data to provide useful insights. I have used python to create a basic data analysis program to get insights into the data
 
 ### Files used
-Include the files used
+bikeshare.py
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Udacity.com
+docs.python.org
 
+### Requirements
+Python needs to pre-installed to run this script
