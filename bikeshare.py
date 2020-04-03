@@ -5,8 +5,8 @@ import numpy as np
 CITY_DATA_DICTIONARY = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
-months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
-days = {'monday':1
+months_list = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+days_dictionary = {'monday':1
         , 'tuesday':2, 'wednesday':3, 'thursday':4, 'friday':5, 'saturday':6, 'sunday':0}
 def get_filters():
     """
@@ -29,13 +29,13 @@ def get_filters():
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = ' '
-    while (month not in months) and month != 'all':
+    while (month not in months_list) and month != 'all':
         month = input(
             "enter a valid month in 'january', 'february', 'march', 'april', 'may', 'june', 'all' :\n").lower()
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = ' '
-    while (day not in days) and day != 'all':
+    while (day not in days_dictionary) and day != 'all':
         day = input(
             "enter a valid day e.g. 'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday' : \n").lower()
 
@@ -65,7 +65,7 @@ def load_data(city, month, day):
         df = df[df['month']==month]
     if day != 'all':
         # filter by day of week to create the new dataframe
-        df = df[df['day_of_week'] == days[day]]
+        df = df[df['day_of_week'] == days_dictionary[day]]
     return df
 
 def time_stats(df):
