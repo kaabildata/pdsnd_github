@@ -2,7 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
-CITY_DATA = { 'chicago': 'chicago.csv',
+CITY_DATA_DICTIONARY = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 months = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
@@ -21,7 +21,7 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input('Please enter the City which you want to see \n')
     while True:
-        if city.lower() not in CITY_DATA:
+        if city.lower() not in CITY_DATA_DICTIONARY:
             city = input('please enter the city in following list \n [chicago, washigton, new york]\n') 
         else:
             city = city.lower()
@@ -54,7 +54,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    df = pd.read_csv(CITY_DATA[city])
+    df = pd.read_csv(CITY_DATA_DICTIONARY[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.dayofweek
